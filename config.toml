@@ -10,7 +10,7 @@ author              = "Alexander Shchapov"
 title               = "Alexander Shchapov"
 pygmentsuseclasses  = true
 pluralizelisttitles = false
-googleAnalytics     = "UA-123-45"
+googleAnalytics     = "UA-99734322-2"
 
 [permalinks]
 blog  = "pages/:slug/"
@@ -20,12 +20,6 @@ name                   = "Index"
 weight                 = 1
 identifier             = "blog"
 url                    = "/"
-
-[[menu.main]]
-name                   = "About"
-weight                 = 2
-identifier             = "about"
-url                    = "/about/"
 
 [params]
 include_rss            = true
