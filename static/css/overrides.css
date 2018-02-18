@@ -1,0 +1,12 @@
+div.page-heading,
+p.back-to-posts {
+  display: none;
+}
+
+div.title-container > div.page-heading {
+  display: block;
+}
+
+section.header {
+  padding-bottom: 40px;
+}

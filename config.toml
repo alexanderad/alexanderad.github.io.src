@@ -1,0 +1,47 @@
+baseurl             = "https://darednaxella.name/"
+builddrafts         = false
+canonifyurls        = true
+contentdir          = "content"
+languageCode        = "en-US"
+layoutdir           = "layouts"
+publishdir          = "public"
+theme               = "cocoa"
+author              = "Alexander Shchapov"
+title               = "Alexander Shchapov"
+pygmentsuseclasses  = true
+pluralizelisttitles = false
+googleAnalytics     = "UA-123-45"
+
+[permalinks]
+blog  = "pages/:slug/"
+
+[[menu.main]]
+name                   = "Index"
+weight                 = 1
+identifier             = "blog"
+url                    = "/"
+
+[[menu.main]]
+name                   = "About"
+weight                 = 2
+identifier             = "about"
+url                    = "/about/"
+
+[params]
+include_rss            = true
+latestpostscount       = 20
+i18n_flags             = false
+author                 = "Alexander Shchapov"
+cachebuster            = true
+dateform               = "Jan 2, 2006"
+dateformfull           = "Mon Jan 2 2006 15:04:05 MST"
+description            = "Don't panic"
+extracssfiles          = ["/css/overrides.css"]
+faviconfile            = "img/leaf.ico"
+github                 = "//github.com/alexanderad"
+lang                   = "en"
+linkedin               = "//linkedin.com/in/darednaxella"
+noshowreadtime         = false
+selfintro              = ""
+highlightjs            = true
+avatar                 = "img/profile.jpg"
