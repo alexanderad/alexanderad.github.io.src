@@ -1,21 +1,21 @@
 +++
 author = "Alexander Shchapov"
-categories = ["tech", "python", "gdb"]
 date = 2015-07-26T06:31:22Z
 description = ""
 draft = false
 slug = "python-gdb"
-tags = ["tech", "python", "gdb"]
+tags = ["tech", "python"]
 title = "gdb python cheatsheet"
-
 +++
 
 ### Install
+
 Assuming you want to benefit from pyhton-readable traces we need a `py-bt` extension and debug symbols:
 
     sudo apt-get install gdb python2.7-dbg
 
 ### Attach
+
 Attaching to a running process (you must be either owner of this process or root):
 
     gdb python
@@ -23,8 +23,10 @@ Attaching to a running process (you must be either owner of this process or root
 
 Note: process is stopped the moment you attach.
 
-### Inspect 
+### Inspect
+
 * list code for current frame with `py-list`. Current line is shown as `>`:
+
 ```
 gdb> py-list
 1427            Takes length to receive and repeatedly calls recv until able to
@@ -48,5 +50,6 @@ gdb> py-list
 * resume process with `c`
 
 ### Read
+
 * [wiki entry for Debugging with Python](https://wiki.python.org/moin/DebuggingWithGdb)
-* [python gdb support guide](https://docs.python.org/devguide/gdb.html) 
+* [python gdb support guide](https://docs.python.org/devguide/gdb.html)
