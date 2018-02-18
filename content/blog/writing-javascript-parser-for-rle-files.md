@@ -9,25 +9,29 @@ tags = ["tech", "javascript"]
 title = "Writing JavaScript parser for RLE files with PEG.js"
 +++
 
-#### Intro
+## Intro
 
 I spent some time recently thinking on implementation of [Conway's Game of Life](http://en.wikipedia.org/wiki/Conway%27s_Game_of_Life). Since it effectively has only four rules explaining all the "mechanics", there is not much to implement. The main purpose for me was to refresh knowledge of JavaScript and get a bit more familiar with Node.js and D3.js.
 
+![](/img/2015/01/Screenshot-2015-01-10-14-23-52.png)
+
 At some point of implementation I found a [LifeWiki](http://www.conwaylife.com/wiki/Main_Page) which has tons of information about different patterns and their behavior. Notably, there is also an archive of 3k+ patterns of life available for download as a single archive. I decided to widen the result a bit to include DIY RLE parser and a simple browser for that collection.
 
-#### RLE Format
+## RLE Format
 
 Wikipedia says that
 
 > [Run-length encoding](http://en.wikipedia.org/wiki/Run-length_encoding) (RLE) is a very simple form of data compression in which runs of data (that is, sequences in which the same data value occurs in many consecutive data elements) are stored as a single data value and count, rather than as the original run. This is most useful on data that contains many such runs.
 
-With some modifications it can be easily used for cellular automata data. For example, here is the famous [Gosper Glider Gun]() described in RLE format:
+With some modifications it can be easily used for cellular automata data. For example, here is the famous [Gosper Glider Gun](http://www.conwaylife.com/w/index.php?title=Gosper_glider_gun) described in RLE format:
 
-    #N Gosper glider gun
-    #C This was the first gun discovered.
-    #C As its name suggests, it was discovered by Bill Gosper.
-    x = 36, y = 9, rule = B3/S23
-    24bo$22bobo$12b2o6b2o12b2o$11bo3bo4b2o12b2o$2o8bo5bo3b2o$2o8bo3bob2o4bobo$10bo5bo7bo$11bo3bo$12b2o!
+```
+#N Gosper glider gun
+#C This was the first gun discovered.
+#C As its name suggests, it was discovered by Bill Gosper.
+x = 36, y = 9, rule = B3/S23
+24bo$22bobo$12b2o6b2o12b2o$11bo3bo4b2o12b2o$2o8bo5bo3b2o$2o8bo3bob2o4bobo$10bo5bo7bo$11bo3bo$12b2o!
+```
 
 Spending some time we can create a dumb regex based parser for this format, but why we want to to that if we can describe format grammar instead and let parser to be generated for us based on grammar specifications? Here is where PEG.js kicks in.
 
